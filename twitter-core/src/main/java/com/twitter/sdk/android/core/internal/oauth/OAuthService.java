@@ -19,7 +19,6 @@ package com.twitter.sdk.android.core.internal.oauth;
 
 import com.twitter.sdk.android.core.TwitterCore;
 import com.twitter.sdk.android.core.internal.TwitterApi;
-import com.twitter.sdk.android.core.internal.network.OkHttpClientHelper;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -50,7 +49,6 @@ abstract class OAuthService {
                             .build();
                     return chain.proceed(request);
                 })
-                .certificatePinner(OkHttpClientHelper.getCertificatePinner())
                 .build();
 
         retrofit = new Retrofit.Builder()
